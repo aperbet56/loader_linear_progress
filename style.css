@@ -1,0 +1,48 @@
+/**** Reset ****/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/**** Style général de la page ****/
+
+body {
+	width: 100%;
+	min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 8px;
+}
+
+.linear-progress {
+	width: 100%;
+	height: 8px;
+	border: 1px solid #bbbbbb;
+    border-radius: 5px;
+}
+
+.linear-progress::before {
+	content:"";
+	position: relative;
+    width: 100px;
+	height: 100%;
+	display: block;
+	background-color: #fbda61;
+    background-image: linear-gradient(45deg, #fbda61 0%, #ff5acd 100%);
+    border-radius: 5px;
+	animation: loading 2s linear infinite;
+}
+
+/**** Animation loading ****/
+
+@keyframes loading {
+	0%, 100% {
+		left: 0;
+	}
+	49%, 50%, 51% {
+		left:calc(100% - 100px)
+	}
+}
